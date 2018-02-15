@@ -1333,6 +1333,8 @@ class Allpay {
 
       // 載具編號
       data.CarruerNum = opts.CarruerNum || "";
+      
+      data.PaymentInfoURL = opts.PaymentInfoURL;
 
       // 捐贈註記
       data.Donation = opts.Donation || "2";
@@ -1385,7 +1387,7 @@ class Allpay {
     data.CheckMacValue = opts.hasOwnProperty("CheckMacValue") ? opts.CheckMacValue : this.genCheckMacValue(data, data.EncryptType === 1 ? "sha256" : "md5" );
 
     // 產生表單資料
-    let url = `${CONFIG.useSSL ? "https" : "http"}://${CONFIG.host}${ENDPOINT.aioCheckOut}`;
+    let url = `${CONFIG.useSSL ? "https" : "http"}://${CONFIG.host}`;
     let target = opts.target || "_self";
     let html = `<form id="_allpayForm" method="post" target="${target}" action="${url}">`;
     Object.keys(data).forEach((key) => {
