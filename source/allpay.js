@@ -1,9 +1,9 @@
 // dependencies
-import util from "util";
-import crypto from "crypto";
-import http from "http";
-import https from "https";
-import querystring from "querystring";
+const util = require("util");
+const crypto = require("crypto");
+const http = require("http");
+const https = require("https");
+const querystring = require("querystring");
 
 /**
  * API 查詢端點
