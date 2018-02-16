@@ -1300,6 +1300,9 @@ class Allpay {
       }
     }
 
+    data.PaymentInfoURL = opts.PaymentInfoURL;
+    data.StoreExpireDate = opts.StoreExpireDate;
+
     if (data.InvoiceMark === "Y") {
       // 廠商自訂編號
       data.RelateNumber = opts.RelateNumber;
@@ -1333,8 +1336,6 @@ class Allpay {
 
       // 載具編號
       data.CarruerNum = opts.CarruerNum || "";
-      
-      data.PaymentInfoURL = opts.PaymentInfoURL;
 
       // 捐贈註記
       data.Donation = opts.Donation || "2";
